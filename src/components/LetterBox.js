@@ -1,13 +1,23 @@
 import Letter from './Letter';
 
-const LetterBox = () => {
+const LetterBox = ({letters}) => {
+
+    const letterList = letters.map( letter => {
+        return (
+            <Letter author={letter.author}>{letter.message}</Letter>
+        )
+    });
+
     return (
-        <>
+        <Letter>
         <h2>This is the letterbox component</h2>
         <ul>
-            <Letter author="Chris">Hello Santa</Letter>
+            {letterList}
+
+            {/* <Letter author="Chris">Hello Santa</Letter>  */}
+            {/* anything between the tags is called children. Available to all components */}
         </ul>
-        </>
+        </Letter>
     );
 };
 
