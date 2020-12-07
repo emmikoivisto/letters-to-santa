@@ -5,7 +5,7 @@ const LetterBox = () => {
         <>
         <h2>This is the letterbox component</h2>
         <ul>
-            <Letter/>
+            <Letter author="Chris">Hello Santa</Letter>
         </ul>
         </>
     );

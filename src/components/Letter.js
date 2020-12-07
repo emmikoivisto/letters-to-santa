@@ -1,6 +1,9 @@
-const Letter = () => {
+const Letter = ({author, children}) => {
     return (
-        <li>This is a letter</li>
+        <li>
+            <p>{author}</p>
+            <p>{children}</p>
+        </li>
     );
 };
 
