@@ -24,7 +24,8 @@ const LetterConsole = () => {
             <h2>This is the letter console</h2>
             <LetterBox letters={letters}/>
             <h2>Add a Letter:</h2>
-            <LetterForm onLetterSubmit={(letter) => addLetter(letter)}/>
+            <LetterForm onLetterSubmit={(letter) => addLetter(letter)}/> 
+            {/* callback function added as a prop OnLetterSubmit that will be in the form, it's called when Submit is hit */}
         </>
     );
 };

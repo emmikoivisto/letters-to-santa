@@ -2,31 +2,35 @@
 
 import { useState } from "react";
 
-const LetterForm = () => {
+const LetterForm = ({onLetterSubmit}) => {  //onLetterSubmit is a prop caught here from Letter
 
     const [author, setAuthor] = useState(""); //author starts as an empty string
 
-    const [text, setText] = useState(""); //text starts as an empty string
+    const [message, setMessage] = useState(""); //text starts as an empty string
 
     const handleAuthorChange = (event) => {
         setAuthor(event.target.value);
     };
 
-    const handleTextChange = (event) => {
-        setText(event.target.value);
+    const handleMessageChange = (event) => {
+        setMessage(event.target.value);
     };
 
     const handleFormSubmit = (event) => {
         // can do any kind of validation on here to check and change 
         event.preventDefault();
         const authorToSubmit = author.trim(); //removes all whitespace after the text
-        const textToSubmit = text.trim();
-        if (!authorToSubmit || !textToSubmit) {
+        const messageToSubmit = message.trim();
+        if (!authorToSubmit || !messageToSubmit) {
             return  //if these are not present, just return the form
         };
-        //TODO: update letters in LetterConsole
+        //update letters in LetterConsole
+        onLetterSubmit({
+            author: authorToSubmit,
+            message: messageToSubmit
+        })
         setAuthor("");
-        setText(""); //these set them back to empty strings
+        setMessage(""); //these set them back to empty strings
     };
 
     return (
@@ -40,8 +44,8 @@ const LetterForm = () => {
             <input
                 type="text"
                 placeholder="Say something.."
-                value={text}
-                onChange={handleTextChange}
+                value={message}
+                onChange={handleMessageChange}
             />
             <input
                 type="submit"
