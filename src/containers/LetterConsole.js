@@ -1,5 +1,7 @@
 import {useState} from 'react';
 import LetterBox from '../components/LetterBox';
+import LetterForm from '../components/LetterForm';
+
 
 
 //React component
@@ -16,6 +18,8 @@ const LetterConsole = () => {
         <>
             <h2>This is the letter console</h2>
             <LetterBox letters={letters}/>
+            <h2>Add a Letter:</h2>
+            <LetterForm></LetterForm>
         </>
     );
 };
