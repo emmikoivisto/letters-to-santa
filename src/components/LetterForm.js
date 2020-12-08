@@ -9,11 +9,21 @@ const LetterForm = () => {
     const [text, setText] = useState(""); //text starts as an empty string
 
     const handleAuthorChange = (event) => {
-        setAuthor(event.target.value)
+        setAuthor(event.target.value);
     };
 
     const handleTextChange = (event) => {
-        setText(event.target.value)
+        setText(event.target.value);
+    };
+
+    const handleFormSubmit = (event) => {
+        // can do any kind of validation on here to check and change 
+        event.preventDefault();
+        const authorToSubmit = author.trim(); //removes all whitespace after the text
+        const textToSubmit = text.trim();
+        if (!authorToSubmit || !textToSubmit) {
+            return  //if these are not present, just return the form
+        };
     };
 
     return (
