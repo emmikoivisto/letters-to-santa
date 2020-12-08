@@ -24,10 +24,13 @@ const LetterForm = () => {
         if (!authorToSubmit || !textToSubmit) {
             return  //if these are not present, just return the form
         };
+        //TODO: update letters in LetterConsole
+        setAuthor("");
+        setText(""); //these set them back to empty strings
     };
 
     return (
-        <form>
+        <form className="letter-form" onSubmit={handleFormSubmit}>
             <input 
                 type="text"
                 placeholder="Your Name"
