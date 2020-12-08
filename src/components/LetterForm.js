@@ -14,5 +14,7 @@ const LetterForm = () => {
                 value="Post"
             />
         </form>
-    )
-}
+    );
+};
+
+export default LetterForm;

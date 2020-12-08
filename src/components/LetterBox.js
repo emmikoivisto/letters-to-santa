@@ -1,4 +1,5 @@
 import Letter from './Letter';
+import LetterForm from './LetterForm';
 
 const LetterBox = ({letters}) => {
 
@@ -17,6 +18,8 @@ const LetterBox = ({letters}) => {
             {/* <Letter author="Chris">Hello Santa</Letter>  */}
             {/* anything between the tags is called children. Available to all components */}
         </ul>
+        <h2>Add a Letter:</h2>
+        <LetterForm></LetterForm>
         </>
     );
 };
